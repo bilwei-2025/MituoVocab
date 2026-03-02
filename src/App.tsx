@@ -645,15 +645,24 @@ const PlayingComp = ({
                               <button onClick={(e) => { e.stopPropagation(); speakWord(word.en); }} className="p-4 bg-white/20 rounded-full hover:bg-white/30 transition-all flex-shrink-0 shadow-lg active:scale-95"><Volume2 className={isNarrow ? 'w-6 h-6' : 'w-8 h-8 sm:w-12 sm:h-12'} /></button>
                             </div>
                             <p className={`${isNarrow ? 'text-xl sm:text-2xl' : 'text-3xl sm:text-5xl'} opacity-90 mb-6 sm:mb-10 flex-shrink-0 font-black drop-shadow-sm`}>{word.zh}</p>
-                            <div className="bg-white/10 p-6 sm:p-8 rounded-[2.5rem] w-full text-center flex-1 flex flex-col min-h-0 border-2 border-white/10 shadow-inner">
-                              <div className="flex flex-col items-center justify-center gap-4 h-full relative">
-                                <div className="space-y-4 sm:space-y-8 overflow-y-auto w-full custom-scrollbar">
-                                  <p className={`${isNarrow ? 'text-lg sm:text-xl' : 'text-2xl sm:text-4xl'} font-black italic leading-tight break-words drop-shadow-sm`}>{word.sentence}</p>
-                                  <p className={`${isNarrow ? 'text-base sm:text-lg' : 'text-xl sm:text-3xl'} opacity-80 break-words font-black`}>{word.sentenceZh}</p>
+                            <div className="bg-white/10 p-4 sm:p-8 rounded-[2.5rem] w-full text-center flex-1 flex flex-col min-h-0 border-2 border-white/10 shadow-inner">
+                              <div className="flex flex-col items-center justify-center h-full relative">
+                                <div className="space-y-2 sm:space-y-4 overflow-y-auto w-full custom-scrollbar py-2">
+                                  <div className="flex items-center justify-center gap-3 sm:gap-4">
+                                    <button 
+                                      onClick={(e) => { e.stopPropagation(); speakSentenceTwice(word.sentence); }} 
+                                      className="p-2 sm:p-3 bg-white/20 rounded-full hover:bg-white/30 transition-all flex-shrink-0 shadow-md active:scale-95"
+                                    >
+                                      <Volume2 className={isNarrow ? 'w-5 h-5' : 'w-6 h-6 sm:w-8 h-8'} />
+                                    </button>
+                                    <p className={`${isNarrow ? 'text-lg sm:text-xl' : 'text-2xl sm:text-4xl'} font-black italic leading-tight break-words drop-shadow-sm text-left`}>
+                                      {word.sentence}
+                                    </p>
+                                  </div>
+                                  <p className={`${isNarrow ? 'text-base sm:text-lg' : 'text-xl sm:text-3xl'} opacity-80 break-words font-black`}>
+                                    {word.sentenceZh}
+                                  </p>
                                 </div>
-                                <button onClick={(e) => { e.stopPropagation(); speakSentenceTwice(word.sentence); }} className="p-4 bg-white/20 rounded-full hover:bg-white/30 transition-all flex-shrink-0 shadow-lg active:scale-95">
-                                  <Volume2 className={isNarrow ? 'w-6 h-6' : 'w-8 h-8 sm:w-10 h-10'} />
-                                </button>
                               </div>
                             </div>
                             <div className="mt-6 sm:mt-8 flex items-center justify-center w-full flex-shrink-0">
