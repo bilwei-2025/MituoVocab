@@ -1074,9 +1074,9 @@ const RangeSelectComp = ({
               
               <div className="flex bg-slate-100 p-1 rounded-2xl w-full shadow-inner">
                 {[
-                  { label: '＜四個', value: 'less_than_4' },
-                  { label: '四個', value: 'exactly_4' },
-                  { label: '＞四個', value: 'more_than_4' },
+                  { label: '1~3', value: 'less_than_4' },
+                  { label: '4', value: 'exactly_4' },
+                  { label: '5~n', value: 'more_than_4' },
                   { label: '全部', value: null }
                 ].map((opt) => (
                   <button
